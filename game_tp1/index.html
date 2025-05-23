@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Shooter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="game">
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="hud">
+      <span id="score">Pontuação: 0</span>
+      <span id="lives"></span>
+    </div>
+    <div id="game-over" class="hidden">
+      <h1>Game Over</h1>
+      <button onclick="restartGame()">Reiniciar</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
 
