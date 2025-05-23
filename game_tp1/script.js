@@ -1,6 +1,7 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
 
+// Imagens principais
 const playerImg = new Image();
 playerImg.src = "assets/player.png";
 
@@ -11,13 +12,13 @@ const lifeImg = new Image();
 lifeImg.src = "assets/life.png";
 
 const laserImg = new Image();
-laserImg.src = "assets/laser.png";
+laserImg.src = "assets/laserRed.png";
 
 const enemiesImg = {
-  ship: "assets/enemy1.png",
-  ufo: "assets/ufo.png",
-  asteroid_large: "assets/asteroid_large.png",
-  asteroid_small: "assets/asteroid_small.png"
+  ship: "assets/enemyShip.png",
+  ufo: "assets/enemyUFO.png",
+  asteroid_large: "assets/meteorBig.png",
+  asteroid_small: "assets/meteorSmall.png"
 };
 
 let gameRunning = false;
@@ -29,6 +30,7 @@ let score = 0;
 let lives = 3;
 let damageTimer = 0;
 let speedMultiplier = 1;
+
 let player = {
   x: canvas.width / 2 - 25,
   y: canvas.height - 80,
@@ -46,7 +48,7 @@ function drawHUD() {
   const livesDiv = document.getElementById("lives");
   livesDiv.innerHTML = "";
   for (let i = 0; i < lives; i++) {
-    let img = document.createElement("img");
+    const img = document.createElement("img");
     img.src = lifeImg.src;
     livesDiv.appendChild(img);
   }
@@ -90,7 +92,6 @@ function updateObstacles() {
 
 function checkCollisions() {
   obstacles.forEach((o, oi) => {
-    // Player hit
     if (
       player.x < o.x + o.width &&
       player.x + player.width > o.x &&
@@ -103,7 +104,6 @@ function checkCollisions() {
       if (lives <= 0) endGame();
     }
 
-    // Laser hit
     lasers.forEach((l, li) => {
       if (
         l.x < o.x + o.width &&
@@ -174,7 +174,7 @@ document.addEventListener("keydown", (e) => {
     if (!gameRunning) {
       gameRunning = true;
       lastUpdate = Date.now();
-      setInterval(() => { speedMultiplier += 0.2 }, 60000); // +20% por minuto
+      setInterval(() => { speedMultiplier += 0.2 }, 60000); // aumenta 20% por minuto
       requestAnimationFrame(gameLoop);
     } else if (!gamePaused) {
       lasers.push({ x: player.x + 20, y: player.y });
@@ -182,4 +182,3 @@ document.addEventListener("keydown", (e) => {
   }
   if (e.code === "KeyP") gamePaused = !gamePaused;
 });
-
