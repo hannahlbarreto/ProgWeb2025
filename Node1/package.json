@@ -7,7 +7,7 @@
     "start": "NODE_ENV=development nodemon index.js",
     "start:prod": "NODE_ENV=production node index.js"
   },
-  "author": "Ayumi",
+  "author": "Hannah",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.4.5",
