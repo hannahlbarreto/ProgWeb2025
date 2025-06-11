@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela de Multiplicação</title>
+    <style type="text/css">
+      body {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      thead {
+        font-weight: bold;
+      }
+    </style>
+    <script type="text/javascript">
+      const numeros = Array.from({ length: 10 }, (_, index) => index + 1);
+      numeros.forEach((numero) => {
+        document.write(`
+            <table border="1">
+            <thead>
+                <tr>
+                    <td colspan="2">
+                        Produtos de ${numero}
+                    </td>
+                </tr>
+            </thead>
+            ${numeros
+              .map(
+                (multiplicador) =>
+                  `<tr>
+                    <td>${numero} x ${multiplicador}</td>
+                    <td>${numero * multiplicador}</td>
+                  </tr>`
+              )
+              .join("")}
+            </table>`);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
