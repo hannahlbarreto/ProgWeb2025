@@ -1,0 +1,36 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2, label, input, p, button, select {
+    margin-left: 20px;
+}
+
+.textoObservacao {
+    color: red;
+}
+
+.linha-separadora {
+    border-top: 1px solid black;
+    margin: 20px;
+}
+
+.btn {
+    padding: 5px;
+    font-size: 10pt;
+}
+
+.select-desativado {
+    padding: 5px;
+    font-size: 10pt;
+    background-color: #bebebe;
+    border: 1px solid #000;
+    color: #000;
+    opacity: 1;
+}
+
+label {
+    color: blue;
+}

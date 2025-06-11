@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS3</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="./IntegerSet.js"></script>
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <h1>IntegerSet</h1>
+    <p class="textoObservacao">
+      Por padrão, os conjuntos têm um limite máximo de 10 elementos, todos
+      inicialmente definidos como false
+    </p>
+
+    <h2>Conjunto A</h2>
+    <p id="limiteA"></p>
+    <p id="conjuntoA"></p>
+    <button id="valorMaximoA" class="btn">Definir valor máximo</button>
+    <button id="inserirA" class="btn">Inserir elemento</button>
+    <button id="excluirA" class="btn">Excluir elemento</button>
+    <div class="linha-separadora"></div>
+
+    <h2>Conjunto B</h2>
+    <p id="limiteB"></p>
+    <p id="conjuntoB"></p>
+    <button id="valorMaximoB" class="btn">Definir valor máximo</button>
+    <button id="inserirB" class="btn">Inserir elemento</button>
+    <button id="excluirB" class="btn">Excluir elemento</button>
+    <div class="linha-separadora"></div>
+
+    <h2>Operações</h2>
+    <select id="seletorUniao1" class="btn">
+      <option value="A">Conjunto A</option>
+      <option value="B">Conjunto B</option>
+    </select>
+    <label for="conjuntoSelector"><strong>União</strong></label>
+    <select id="seletorUniao2" class="select-desativado" disabled>
+      <option value="A">Conjunto A</option>
+      <option value="B">Conjunto B</option>
+    </select>
+    <button id="uniao">Exibir resultado</button>
+    <br>
+    <p id="resultUniao"></p>
+    <br>
+
+    <select id="seletorIntersecao1" class="btn">
+      <option value="A">Conjunto A</option>
+      <option value="B">Conjunto B</option>
+    </select>
+    <label for="conjuntoSelector"><strong>Interseção</strong></label>
+    <select id="seletorIntersecao2" class="select-desativado" disabled>
+      <option value="A">Conjunto A</option>
+      <option value="B">Conjunto B</option>
+    </select>
+    <button id="intersecao">Exibir resultado</button>
+    <br>
+    <p id="resultIntersecao"></p>
+    <br>
+
+    <select id="seletorDiferenca1" class="btn">
+      <option value="A">Conjunto A</option>
+      <option value="B">Conjunto B</option>
+    </select>
+    <label for="conjuntoSelector"><strong>Diferença</strong></label>
+    <select id="seletorDiferenca2" class="select-desativado" disabled>
+      <option value="A">Conjunto A</option>
+      <option value="B">Conjunto B</option>
+    </select>
+    <button id="diferenca">Exibir resultado</button>
+    <br>
+    <p id="resultDiferenca"></p>    
+  </body>
+</html>
