@@ -1,0 +1,26 @@
+body {
+    margin-left: 20px;
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}
+
+input {
+    width: 100px;
+}
+
+#grafico {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 1rem;
+    gap: 0.5rem;
+    height: auto;
+    overflow: auto;
+}
+
+#grafico div {
+    display: inline-block;
+}
