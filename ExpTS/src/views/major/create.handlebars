@@ -1,0 +1,23 @@
+<div class="d-flex justify-content-between">
+  <h3>Criar Curso</h3>
+  <div>
+    <a class="btn btn-primary" href="/major">Voltar</a>
+  </div>
+</div>
+<div class="col-6">
+  <form action="/major/create" method="post">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Nome" />
+    </div>
+    <div class="mb-3">
+      <label for="code" class="form-label">Sigla</label>
+      <input type="text" class="form-control" id="code" name="code" placeholder="Sigla do curso" />
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Descrição</label>
+      <textarea class="form-control" id="description" rows="3" name="description" placeholder="Descrição do curso"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Criar</button>
+  </form>
+</div>

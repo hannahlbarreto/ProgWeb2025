@@ -1,0 +1,28 @@
+<div class="d-flex justify-content-between">
+  <h3>Cursos</h3>
+  <div>
+    <a class="btn btn-primary" href="/major/create">+</a>
+  </div>
+</div>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col" style="vertical-align: middle;">Sigla</th>
+      <th scope="col" style="vertical-align: middle;">Nome</th>
+      <th scope="col" style="text-align: right;">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each majors}}
+      <tr>
+        <th scope="row" style="vertical-align: middle;">{{code}}</th>
+        <td style="vertical-align: middle;">{{name}}</td>
+        <td style="text-align: right;">
+          <a class="btn btn-primary" href="/major/read/{{id}}">Ver</a>
+          <a class="btn btn-warning" href="/major/update/{{id}}">Editar</a>
+          <a class="btn btn-danger" href="/major/remove/{{id}}">Remover</a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

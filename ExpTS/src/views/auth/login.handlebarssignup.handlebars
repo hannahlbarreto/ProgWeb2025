@@ -1,0 +1,62 @@
+<style>
+  .container-eye { cursor: pointer; }
+</style>
+<div class="d-flex justify-content-between">
+  <h3>Cadastro de novo usuário Curso</h3>
+  <div>
+    <a class="btn btn-primary" href="/major">Voltar</a>
+  </div>
+</div>
+<div class="col-6">
+  <form action="/auth/signup" id="signup" method="post">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nome Completo</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Nome completo"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input
+        type="text"
+        class="form-control"
+        id="email"
+        name="email"
+        placeholder="Email"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="majorId" class="form-label">Curso</label>
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        name="majorId"
+      >
+        {{#each majors}}
+          <option value={{id}}>{{name}}</option>
+        {{/each}}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Senha"/>
+    </div>
+    <div class="mb-3">
+      <label for="repeat-password" class="form-label">Repita a senha</label>
+      <input type="password" class="form-control" id="repeat-password"  placeholder="Repita a senha"/>
+    </div>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+  </form>
+</div>
+<script>
+ const signup = document.getElementById("signup");
+    signup.addEventListener("submit", (e) => {
+        const password = document.getElementById("password").value;
+        const repeatPassword = document.getElementById("repeat-password").value;
+        if(!password || password !== repeatPassword) e.preventDefault();
+    })
+</script>
